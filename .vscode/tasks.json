@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+	  {
+		"label": "Run ASP.NET Backend",
+		"type": "process",
+		"command": "dotnet",
+		"args": ["run"],
+		"problemMatcher": "$msCompile",
+		"options": {
+		  "cwd": "${workspaceFolder}/eKsiondz-backend"
+		}
+	  },
+	  {
+		"label": "Run MAUI Client",
+		"type": "process",
+		"command": "dotnet",
+		"args": ["run"],
+		"problemMatcher": "$msCompile",
+		"options": {
+		  "cwd": "${workspaceFolder}/eKsiondz"
+		}
+	  }
+	]
+  }
+  
