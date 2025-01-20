@@ -1,14 +1,30 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
+    "compounds": [
+      {
+        "name": "Run All",
+        "configurations": ["Launch ASP.NET Backend"]
+      }
+    ],
     "configurations": [
-        {
-            "name": ".NET MAUI",
-            "type": "maui",
-            "request": "launch",
-            "preLaunchTask": "maui: Build"
-        }
+      {
+        "name": "Launch ASP.NET Backend",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "Run ASP.NET Backend",
+        "program": "${workspaceFolder}/eKsiondz-backend/bin/Debug/net8.0/eKsiondz-backend.dll",
+        "cwd": "${workspaceFolder}/eKsiondz-backend",
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "Launch MAUI Client",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "Run MAUI Client",
+        "program": "${workspaceFolder}/eKsiondz/bin/Debug/net8.0-ios/iossimulator-x64/eKsiondz.app",
+        "cwd": "${workspaceFolder}/eKsiondz",
+        "console": "integratedTerminal"
+      }
     ]
-}
+  }
+  
