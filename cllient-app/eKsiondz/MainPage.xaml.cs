@@ -1,4 +1,4 @@
-﻿namespace eKsiondz;
+namespace eKsiondz;
 
 public partial class MainPage : ContentPage
 {

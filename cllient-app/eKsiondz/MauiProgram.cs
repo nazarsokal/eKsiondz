@@ -1,4 +1,4 @@
-﻿using Maui.GoogleMaps.Hosting;
+using Maui.GoogleMaps.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace eKsiondz;
