@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Maui.GoogleMaps.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace eKsiondz;
 
@@ -9,6 +10,11 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+#if ANDROID
+			.UseGoogleMaps()
+#elif IOS
+			.UseGoogleMaps("AIzaSyDrnaAW5Wugrf4jsAtUm99dfsGmpM0KcF4")
+#endif			
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

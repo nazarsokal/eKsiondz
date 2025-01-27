@@ -2,23 +2,19 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+	private readonly ApiService _apiService;
 
 	public MainPage()
 	{
 		InitializeComponent();
+		_apiService = new ApiService();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
+	private async void GetRequestButton_Clicked(object sender, System.EventArgs e)
 	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
+		string message = await _apiService.GetServerMessageAsync($"person/{Entry.Text}");
+		await DisplayAlert("Server Message", message, "OK");
 	}
+	
 }
 
